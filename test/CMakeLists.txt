@@ -1,12 +1,15 @@
-file(GLOB_RECURSE TESTER_CPP_FILES ${CMAKE_CURRENT_LIST_DIR}/*.cpp)
-file(GLOB_RECURSE TESTER_HPP_FILES ${CMAKE_CURRENT_LIST_DIR}/*.hpp)
+if (ENABLE_TESTING)
 
-add_executable(tester ${TESTER_CPP_FILES} ${TESTER_HPP_FILES})
+    file(GLOB_RECURSE TESTER_CPP_FILES ${CMAKE_CURRENT_LIST_DIR}/*.cpp)
+    file(GLOB_RECURSE TESTER_HPP_FILES ${CMAKE_CURRENT_LIST_DIR}/*.hpp)
 
-# Link the tester with the project's library
-# target_link_libraries(tester <project-name>)
- 
-# Link with the test framework:
-# Catch2: 
-# target_link_libraries(tester catch2 threads)
+    add_executable(tester ${TESTER_CPP_FILES} ${TESTER_HPP_FILES})
 
+    # Link the tester with the project's library
+    # target_link_libraries(tester <project-name>)
+
+    # Link with the test framework:
+    # Catch2:
+    # target_link_libraries(tester catch2 threads)
+
+endif ()

@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.14)
 # Name of your project
 # project(<project-name>)
 
+# Options for building the project
+option(ENABLE_TESTING "Enable testing of the project." ON)
+option(ENABLE_BENCHMARKING "Enable benchmarking of the project." ON)
+option(ENABLE_INSTALL "Enable installation of the library." ON)
+
 # C++ Standards
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
