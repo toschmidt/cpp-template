@@ -12,6 +12,8 @@
 # For more information on library definitions in cmake see https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
 
 if (ENABLE_INSTALL)
+    include(GNUInstallDirs)
+
     # Install the project's header files (destination is relative to CMAKE_INSTALL_PREFIX)
     # header-only libraries should keep their header files in the src folder
     # static libraries should have an additional directory (include) to keep the global header files
