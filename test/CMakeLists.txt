@@ -6,10 +6,10 @@ if (ENABLE_TESTING)
     add_executable(tester ${TESTER_CPP_FILES} ${TESTER_HPP_FILES})
 
     # Link the tester with the project's library
-    # target_link_libraries(tester <project-name>)
+    # target_link_libraries(tester PRIVATE <project-name>)
 
     # Link with the test framework:
     # Catch2:
-    # target_link_libraries(tester catch2 threads)
+    # target_link_libraries(tester PRIVATE catch2 threads)
 
 endif ()
