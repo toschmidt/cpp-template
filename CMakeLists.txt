@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.14)
-# Name of your project
 # project(<project-name>)
 
 # Options for building the project
@@ -27,8 +26,15 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
 # Test Framework
 # include(${CMAKE_SOURCE_DIR}/cmake/import/catch2.cmake)
 
+# Benchmark Generator
+include(benchmark-generator/benchmark-generator.cmake)
+
+
 # Implementation
 add_subdirectory(src)
 
 # Tests
 add_subdirectory(test)
+
+# Benchmarks
+add_subdirectory(benchmark)
