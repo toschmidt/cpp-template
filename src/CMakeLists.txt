@@ -1,15 +1,22 @@
 # Header-Only Library (without source files):
 # add_library(<project-name> INTERFACE)
-# target_include_directories(<project-name> INTERFACE ${CMAKE_CURRENT_LIST_DIR})
+# target_include_directories(<project-name> INTERFACE ${CMAKE_SOURCE_DIR}/src)
 # target_link_libraries(<project-name> INTERFACE <dependencies>)
 
-# Static Library (with source files):
-# file(GLOB_RECURSE CPP_FILES ${CMAKE_CURRENT_LIST_DIR}/*.cpp)
+# Static Library (with header files in src/):
+# file(GLOB_RECURSE CPP_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
 # add_library(<project-name> INTERFACE ${CPP_FILES})
-# target_include_directories(<project-name> INTERFACE ${CMAKE_CURRENT_LIST_DIR})
-# target_link_libraries(<project-name> PRIVATE <dependencies>)
+# target_include_directories(<project-name> INTERFACE ${CMAKE_SOURCE_DIR}/src)
+# target_link_libraries(<project-name> PRIVATE <>)
+# target_link_libraries(cpp-benchmark INTERFACE cpp-utility)
 
-# For more information on library definitions in cmake see https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
+# Static Library (with public header files in include/ and private header files in src/)
+# file(GLOB_RECURSE CPP_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
+# add_library(<project-name> STATIC ${CPP_FILES})
+# target_include_directories(<project-name
+#         PUBLIC $<INSTALL_INTERFACE:include> $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+#         PRIVATE ${CMAKE_SOURCE_DIR}/src)
+# target_link_libraries(cpp-benchmark INTERFACE <dependencies>)
 
 if (ENABLE_INSTALL)
     include(GNUInstallDirs)
