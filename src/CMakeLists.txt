@@ -21,13 +21,15 @@
 if (ENABLE_INSTALL)
     include(GNUInstallDirs)
 
-    # Install the project's header files (destination is relative to CMAKE_INSTALL_PREFIX)
-    # header-only libraries should keep their header files in the src folder
-    # static libraries should have an additional directory (include) to keep the global header files
-    # message(STATUS "install_dir=${include_install_dir}")
-    # install(
-    #         DIRECTORY ${PROJECT_SOURCE_DIR}/src/
-    #         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    #         FILES_MATCHING PATTERN "*.hpp"
-    #)
+    # Install a header-only library (destination is relative to CMAKE_INSTALL_PREFIX)
+    # header-only libraries keep their header files in the src folder
+    # install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/
+    #         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+    # Install a static libraries (destination is relative to CMAKE_INSTALL_PREFIX)
+    # static libraries should have an additional directory (include) for the global header files
+    # install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/
+    #         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    # install(TARGETS <project-name>
+    #         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif ()
