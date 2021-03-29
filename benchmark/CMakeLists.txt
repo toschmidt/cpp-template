@@ -11,8 +11,8 @@ if (ENABLE_BENCHMARKING)
     foreach (target ${BENCHMARKS})
         target_link_libraries(${target} PRIVATE benchmark_lib)
         # target_link_libraries(${target} PRIVATE <project-name>)
-        # target_link_libraries(${target} PRIVATE cpp-benchmark googlebenchmark cpp-utility)
-        # cpp-benchmark depends on googlebenchmark and cpp-utility
+        # target_link_libraries(${target} PRIVATE cpp-benchmark googlebenchmark threads cpp-utility)
+        # cpp-benchmark depends on googlebenchmark, threads and cpp-utility
     endforeach ()
 
 endif ()
