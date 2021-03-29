@@ -10,3 +10,8 @@ shell.nix
 .idea
 cmake-build-*/
 
+# Python
+__pycache__
+
+# Benchmark Schema
+benchmark/*.schema.json
