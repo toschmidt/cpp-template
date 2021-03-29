@@ -25,6 +25,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
 
 # Test Framework
 # include(${CMAKE_SOURCE_DIR}/cmake/import/catch2.cmake)
+# include(${CMAKE_SOURCE_DIR}/cmake/import/googletest.cmake)
 
 # Benchmark Generator
 include(benchmark-generator/benchmark-generator.cmake)

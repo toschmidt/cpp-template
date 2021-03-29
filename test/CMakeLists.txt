@@ -11,5 +11,7 @@ if (ENABLE_TESTING)
     # Link with the test framework:
     # Catch2:
     # target_link_libraries(tester PRIVATE catch2 threads)
+    # GoogleTest:
+    # target_link_libraries(tester PRIVATE googletest threads)
 
 endif ()
