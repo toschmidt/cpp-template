@@ -23,9 +23,13 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
 # Libraries
 # include(${CMAKE_SOURCE_DIR}/cmake/import/cpp-utility.cmake)
 
-# Test Framework
+# Test Frameworks
 # include(${CMAKE_SOURCE_DIR}/cmake/import/catch2.cmake)
 # include(${CMAKE_SOURCE_DIR}/cmake/import/googletest.cmake)
+
+# Benchmark Frameworks
+# include(${CMAKE_SOURCE_DIR}/cmake/import/cpp-benchmark.cmake)
+# include(${CMAKE_SOURCE_DIR}/cmake/import/googlebenchmark.cmake)
 
 # Benchmark Generator
 include(benchmark-generator/benchmark-generator.cmake)
